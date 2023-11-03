@@ -1,205 +1,141 @@
-<!-- Gõ B4 enter -->
-<!doctype html>
+<!-- "!"" enter là tạo được cái form html5 -->
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Exercise</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- font google : hind  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- font awesome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+  <!-- Animation  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!-- Main Css  -->
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-    <div class="container" style="margin-bottom:500px;">
-        <h3 id="title">Cybersoft</h3>
-        <br />
-        <input id="txt" class="form-control w-25" value="123" />
-        <br />
-        <input id="number" class="form-control w-25" value="1000000" />
-        <br />
-        <div class="w-25">
-            <img class="w-100" id="hinhAnh" src="./Image/images.jpeg" alt="">
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Tính Tiền Típ
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label>Tổng tiền thanh toán</label>
+              <input id="tongTien" type="number" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Bạn muốn Tip bao nhiêu</label>
+              <select id="slcTip" class="form-control">
+                <option value="10">10%</option>
+                <option value="20">20%</option>
+                <option value="30">30%</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="">Muốn share bao nhiêu người</label>
+              <input id="share" class="form-control">
+            </div>
+            <button id="btnTinhNao" class="btn btn-danger">Tính nào</button>
+          </div>
+          <div id="footerTip" class="card-footer text-muted">
+          </div>
         </div>
-        <br />
-        <button onclick="sayHello()" class="btn btn-success">Say hello</button>
-        <hr />
-        <div class="form-group">
-            <p>Ví dụ 1 : Nhập vào 1 giá trị và in ra giá trị tại kết quả</p>
-            <input id="giaTriNhap" class="form-control w-25" />
-            <br />
-            <button onclick="hienThiThongTin()" id="btnHienThi" class="btn btn-success">Hiển thị</button>
-            <div class="mt-2 text-success">
-                Kết quả : <span id="ketQuaHienThi"></span>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Chia tiền
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label>Số tiền cần thanh toán</label>
+              <input id="nhapTien" type="number" class="form-control" placeholder="nhập tiền">
+              <small id="helpId" class="text-muted">Cảm ơn quý khách</small>
             </div>
+            <div class="form-group">
+              <label>Bạn muốn bo bao nhiêu</label>
+              <select id="tienBo" class="form-control">
+                <option value="10">Tôi bo 10%</option>
+                <option value="20">Tôi bo 20%</option>
+                <option value="30">Tôi bo 30%</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Cần chia cho mấy người</label>
+              <input id="sharePeople" type="number" class="form-control" placeholder="nhập số người">
+              <small id="helpId" class="text-muted">Campuchi anh em vui vẻ</small>
+            </div>
+            <button id="btnMoney" class="btn btn-success">Mỗi anh em bằng này tiền nhé</button>
+          </div>
+          <div id="campuchia" class="card-footer text-muted">    
+          </div>
         </div>
-
-        <hr>
-
-        <div class="form-group">
-            <h4>Ví dụ 2 : Nhập vào số tiền lương (1h) và số giờ làm, In ra tổng lương bằng số giờ nhân tiền lương</h4>
-            <div>
-                <p>Tiền lương 1h</p>
-                <input id="tienLuong1h" class="form-control w-25">
-            </div>
-            <br>
-            <div>
-                <p>Số giờ làm</p>
-                <input id="soGioLam" class="form-control w-25">
-            </div>
-            <br>
-            <button onclick="tinhTongLuong()" id="btnTinhTien" class="btn btn-success">Tính tiền</button>
-            <br>
-            <div class="mt-2 alert alert-success">
-                Kết quả : <span id="tongLuong"></span>
-            </div>
-        </div>
-        <hr>
-        <h3>Ví dụ 4: Tính tiền típ</h3>
-        <div class="d-flex justify-content-center">
-            <div class="card w-50">
-                <div class="card-header text-center" style="background-color: brown; color: #fff;">
-                    TÍNH TIỀN TIP
-                </div>
-                <div class="body">
-                    <div class="form-group">
-                        <p>Tổng tiền thanh toán</p>
-                        <input class="form-control" id="tongTienThanhToan" />
-                    </div>
-                    <div class="form-group">
-                        <p>Bạn muốn tip bao nhiêu ?</p>
-                        <select id="phanTramtip" class="form-control">
-                            <option value="30">30% - Tuyệt</option>
-                            <option value="20">20% - Tốt</option>
-                            <option value="15">15% - Tạm ổn</option>
-                            <option value="10">10% - Tồi</option>
-                            <option value="5">5% - Tệ</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <p>Số người tip</p>
-                        <input class="form-control" id="soNguoiTip" />
-                    </div>
-
-                </div>
-                <div class="card-footer text-center">
-                    <button id="btnTinhTienTip" class="btn btn-danger">TÍNH NÀO</button>
-                    <br>
-                    <span style="font-size: 25px;">Số tiền tip trên người</span>
-                    <br>
-                    <span id="tienTipTrenNguoi" class="display-4">10$</span>
-
-                </div>
-
-            </div>
-
-        </div>
-
+      </div>
     </div>
+  </div>
 
-    <hr>
-    <div class="container" style="margin-bottom:500px;">
-        <div class="mt-2">
-            <h3>Ví dụ 1 : Tính giá trị tuyệt đối của 1 số</h3>
-            <div class="form-group">
-                <p>Nhập vào 1 số</p>
-                <input class="form-control w-25" id="iSo_1">
-                <br>
-                <button id="btnTinhTriTuyetDoi" class="btn btn-success">Tính trị tuyệt đối</button>
-            </div>
-            <div class="form-group">
-                <p class="alert alert-success" id="ketQuaViDu1"></p>
-            </div>
+  <!-- giữ form mẫu cho những bài tập khác
+  <div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          Tính Tiền Típ
         </div>
-        <div class="mt-2">
-            <hr>
-            <h3>Ví dụ 2 : Viết chương trình cho phép người dùng nhập vào 1 số => In ra màn hình cho biết số đó là số
-                chẵn hay số
-                lẻ</h3>
-            <div class="form-group">
-                <p>Nhập vào 1 số</p>
-                <input class="form-control w-25" id="iSo_2">
-                <br>
-                <button id="btnKiemTraSo" class="btn btn-success">Kiểm tra số</button>
-            </div>
-            <div class="form-group">
-                <p id="ketQuaViDu2" class="alert alert-success"></p>
-            </div>
+        <div class="card-body">
+          <h4 class="card-title">Title</h4>
+          <p class="card-text">Text</p>
         </div>
-        <div class="mt-2">
-            <hr>
-            <h3>Ví dụ 5 : Viết chương trình đọc các số từ 1-4</h3>
-            <div class="form-group">
-                <p>Nhập vào 1 số</p>
-                <input class="form-control w-25" id="iSo_2">
-                <br>
-                <button id="btnDocSo" class="btn btn-success">Đọc số</button>
-            </div>
-            <div class="form-group">
-                <p id="ketQuaViDu5" class="alert alert-success"></p>
-            </div>
-            <hr>
-            <h3>Bài tập 1 : Xây dựng chức năng zoomin zoomout cho 2 button bên dưới</h3>
-            <div>
-                <i class="fa fa-home" aria-hidden="true" id="home" style="font-size: 250px;"></i>
-                <button class="btn btn-outline-success" id="btnZoomInHome">+</button>
-                <button class="btn btn-outline-success" id="btnZoomOutHome">-</button>
-            </div>
-            <hr>
-            <h3>Bài tập 2 : Xây dựng chức năng zoomin zoomout cho đoạn text bên dưới</h3>
-            <div>
-                <p id="txtContent">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet excepturi labore quae inventore ad, itaque eaque repudiandae rem sequi expedita.</p>
-                <button class="btn btn-outline-success" id="btnZoomInHome">+</button>
-                <button class="btn btn-outline-success" id="btnZoomOutHome">-</button>
-            </div>
-            <hr>
-            <h3>Bài tập 3 : Cho phép người dùng nhập vào 1 số, In ra số thẻ dev hello cybersoft tương tự</h3>
-            <div class="form-group">
-                <p>Nhập vào 1 số</p>
-                <input class="form-control mb-2 w-25" id="iSo" >
-                <button class="btn btn-success" id="btnInTheDiv">In thẻ div</button>
-            </div>
-            <div id="ketQua1">
-                <div class="alert alert-success mt-2">Hello CyberSoft</div>
-            </div>
-            <hr>
-            <h3>Bài tập 4 : Cho phép người dùng tính giai thừa</h3>
-            <div class="form-group">
-                <p>Nhập vào 1 số</p>
-                <input class="form-control mb-2 w-25" id="iSo4" >
-                <button class="btn btn-success" id="btnInTheDiv">Tính giai thừa</button>
-            </div>
-            <div id="ketQua4">
-                <div class="alert alert-success mt-2"></div>
-            </div>
-
-
-
-           
+        <div class="card-footer text-muted">
+          Footer
         </div>
+      </div>
     </div>
+  </div>
+</div>
+ -->
 
 
 
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
 
-    <script src="./js/index.js"></script>
+  <!-- jquery : hỗ trợ cho các thư viện chạy được các tình năng
+    bỏ chữ slim và xóa đoạn mã phía sau  -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+  <!-- Bootstrap 4 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+
+  <script src="./js/index.js"></script>
 </body>
 
 </html>
