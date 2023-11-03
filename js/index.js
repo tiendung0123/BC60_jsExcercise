@@ -55,3 +55,57 @@ btnMoney.onclick = function () {
 
     document.getElementById("campuchia").innerHTML = 'Mỗi người ' + campuchia + ' $';
 }
+
+/*
+Bài tập tính tiền lương nhân viên
+■ Input
+- Nhập số ngày làm
+- Lương 1 ngày : 100.000
+
+■ Process
+- Tạo biến input ngày làm : ngayLam
+- Tạo biến chứa kết quả : tienLuong
+- Công thức tính :
+  tienLuong = ngayLam * 100000
+- In tienLuong đã tính ra ngoài màn hình.
+■　Output
+- In ra tiền lương
+*/
+var tinhLuong = document.getElementById("tinhLuong");
+tinhLuong.onclick = function () {
+    var ngayLam = document.getElementById("ngayLam").value;
+    var tienLuong = 0;
+
+    tienLuong = ngayLam * 100000;
+
+    document.getElementById("tienLuong").innerHTML = 'Lương tháng của bạn là : ' + tienLuong + ' VND';
+}
+
+/*
+Bài tập nhập 5 số thực và tính số trung bình
+■ Input
+- Nhập 5 số
+■ Process
+- Tạo biến & gán action (onclick) cho function tính toán : btnTB
+- Tạo html 5 text-group để input 5 số & tạo biến
+  + so1, so2, so3, so4, so5 
+- Tạo biến để in kết quả, ban đầu gán giá trị : result_TB = 0 ;
+- Biểu thức tính :
+  result_TB = (so1 + so2 + so3 + so4 + so5)/5 ;
+- Gán trá trị cho innerHTML của biến kết quấ
+
+■　Output
+- In ra trung bình của 5 số đã nhập
+*/
+
+
+
+/*
+Bài tập quy đổi ra tiền đô $ . 1$ = 23.500 VND
+■ Input
+- Nhập số tiền đô($) muốn đổi
+■ Process
+- Xủ lý : 
+■　Output
+- In ra số tiền VND tương ứng
+*/
