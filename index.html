@@ -3,97 +3,97 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JS Exercise</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Exercise</title>
 
-  <!-- font google : hind  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- font google : hind  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- font awesome  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- font awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Bootstrap 4 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <!-- Bootstrap 4 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-  <!-- Animation  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- Animation  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-  <!-- Main Css  -->
-  <link rel="stylesheet" href="./style.css">
+    <!-- Main Css  -->
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-  <hr>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-header">
-            Tính Tiền Típ
-          </div>
-          <div class="card-body">
-            <div class="form-group">
-              <label>Tổng tiền thanh toán</label>
-              <input id="tongTien" type="number" class="form-control">
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        Tính Tiền Típ
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label>Tổng tiền thanh toán</label>
+                            <input id="tongTien" type="number" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Bạn muốn Tip bao nhiêu</label>
+                            <select id="slcTip" class="form-control">
+                                <option value="10">10%</option>
+                                <option value="20">20%</option>
+                                <option value="30">30%</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Muốn share bao nhiêu người</label>
+                            <input id="share" class="form-control">
+                        </div>
+                        <button id="btnTinhNao" class="btn btn-danger">Tính nào</button>
+                    </div>
+                    <div id="footerTip" class="card-footer text-muted">
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-              <label>Bạn muốn Tip bao nhiêu</label>
-              <select id="slcTip" class="form-control">
-                <option value="10">10%</option>
-                <option value="20">20%</option>
-                <option value="30">30%</option>
-              </select>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        Chia tiền
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label>Số tiền cần thanh toán</label>
+                            <input id="nhapTien" type="number" class="form-control" placeholder="nhập tiền">
+                            <small id="helpId" class="text-muted">Cảm ơn quý khách</small>
+                        </div>
+                        <div class="form-group">
+                            <label>Bạn muốn bo bao nhiêu</label>
+                            <select id="tienBo" class="form-control">
+                                <option value="10">Tôi bo 10%</option>
+                                <option value="20">Tôi bo 20%</option>
+                                <option value="30">Tôi bo 30%</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Cần chia cho mấy người</label>
+                            <input id="sharePeople" type="number" class="form-control" placeholder="nhập số người">
+                            <small id="helpId" class="text-muted">Campuchi anh em vui vẻ</small>
+                        </div>
+                        <button id="btnMoney" class="btn btn-success">Mỗi anh em bằng này tiền nhé</button>
+                    </div>
+                    <div id="campuchia" class="card-footer text-muted">
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-              <label for="">Muốn share bao nhiêu người</label>
-              <input id="share" class="form-control">
-            </div>
-            <button id="btnTinhNao" class="btn btn-danger">Tính nào</button>
-          </div>
-          <div id="footerTip" class="card-footer text-muted">
-          </div>
         </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-header">
-            Chia tiền
-          </div>
-          <div class="card-body">
-            <div class="form-group">
-              <label>Số tiền cần thanh toán</label>
-              <input id="nhapTien" type="number" class="form-control" placeholder="nhập tiền">
-              <small id="helpId" class="text-muted">Cảm ơn quý khách</small>
-            </div>
-            <div class="form-group">
-              <label>Bạn muốn bo bao nhiêu</label>
-              <select id="tienBo" class="form-control">
-                <option value="10">Tôi bo 10%</option>
-                <option value="20">Tôi bo 20%</option>
-                <option value="30">Tôi bo 30%</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>Cần chia cho mấy người</label>
-              <input id="sharePeople" type="number" class="form-control" placeholder="nhập số người">
-              <small id="helpId" class="text-muted">Campuchi anh em vui vẻ</small>
-            </div>
-            <button id="btnMoney" class="btn btn-success">Mỗi anh em bằng này tiền nhé</button>
-          </div>
-          <div id="campuchia" class="card-footer text-muted">    
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
 
-  <!-- giữ form mẫu cho những bài tập khác
+    <!-- giữ form mẫu cho những bài tập khác
   <div class="container">
   <div class="row">
     <div class="col-md-6">
@@ -114,28 +114,48 @@
 </div>
  -->
 
+    <!-- Tính tiền lương nhân viên  -->
+    <hr>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                Tính tiền lương (100.000/ngày)
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="">Nhập số ngày làm việc :</label>
+                    <input type="text" name="" id="ngayLam" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+                <button id="tinhLuong" class="btn btn-success">Tính</button>
+            </div>
+            <div id="tienLuong" class="card-footer text-muted">
+
+            </div>
+        </div>
+    </div>
 
 
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
 
-  <!-- jquery : hỗ trợ cho các thư viện chạy được các tình năng
+    <!-- jquery : hỗ trợ cho các thư viện chạy được các tình năng
     bỏ chữ slim và xóa đoạn mã phía sau  -->
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
 
-  <!-- Bootstrap 4 JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-    crossorigin="anonymous"></script>
+    <!-- Bootstrap 4 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
 
-  <script src="./js/index.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>
