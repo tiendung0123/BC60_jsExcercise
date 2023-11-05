@@ -131,3 +131,74 @@ doiTien.onclick = function () {
 
     document.getElementById("tienVND").innerHTML = 'Số tiền VN tương ứng : ' + tienVND + ' VND';
 }
+
+/*
+Tính diện tích, chu vi hình chữ nhật
+■ Input
+- Nhập chiều dài
+- Nhập chiều rộng
+
+■ Process
+- Tạo biến & hàm cho action
+  + btnTinh
+  + onclick
+- Tạo biến : (DOM đến các id tương ứng)
+  + chieuDai (quy định kiểu number or * 1)
+  + chieuRong
+  + chuVi
+  + dienTich
+- Xủ lý : 
+  + chuVi = (chieuDai + chieuRong) * 2 ;
+  + dienTich = chieuDai * chieuRong
+- In kết quả (DOM đến id kết quả)
+  + ...innerHTML = 
+  + click vào 1 button, ra kết quả của cả 2
+
+■　Output
+- In ra diện tích
+- In ra chu vi
+*/
+
+var btnTinh = document.getElementById("btnTinhHCN");
+btnTinhHCN.onclick = function () {
+  var chieuDai = document.getElementById("chieuDai").value * 1;
+  var chieuRong = document.getElementById("chieuRong").value * 1;
+  var chuVi = 0;
+  var dienTich = 0;
+
+  chuVi = (chieuDai + chieuRong) * 2;
+  dienTich = chieuDai * chieuRong;
+
+  document.getElementById("resultHCN").innerHTML = "Diện tích : " + dienTich + "; Chu vi : " + chuVi;
+}
+
+/*
+Tính tổng 2 ký tự của số có 2 chữ số đã nhập.
+■ Input
+- Nhập chữ số có 2 chữ số
+
+■ Process
+- Tạo biến & hàm cho action
+  + btnTinh
+  + onclick
+- Tạo biến : (DOM đến các id tương ứng)
+  + nhapSo (quy định kiểu number or * 1)
+  + tong2so
+- Xủ lý : 
+  + tong2so = nhapSo/10 + nhapSo % 10 ;
+- In kết quả (DOM đến id kết quả)
+  + ...innerHTML = 
+
+■　Output
+- Tổng 2 ký tự của số có 2 chữ số đã nhập.
+*/
+
+var btnTinh = document.getElementById("btnTinh");
+btnTinh.onclick = function () {
+  var nhapSo = document.getElementById("nhapSo").value * 1 ;
+  var tong2so = 0;
+
+  tong2so = Math.floor(nhapSo/10) + nhapSo % 10 ;
+
+  document.getElementById("tong2so").innerHTML = "Tổng 2 ký tự là : " + tong2so ;
+}
