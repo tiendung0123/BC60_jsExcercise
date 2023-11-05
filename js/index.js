@@ -2,21 +2,21 @@
 // Tính tiền tip
 var btnTinhNao = document.getElementById("btnTinhNao");
 btnTinhNao.onclick = function () {
-  var tongTien = document.getElementById("tongTien").value * 1;
-  var slcTip = document.getElementById("slcTip").value * 1;
-  var share = document.getElementById("share").value * 1;
+    var tongTien = document.getElementById("tongTien").value * 1;
+    var slcTip = document.getElementById("slcTip").value * 1;
+    var share = document.getElementById("share").value * 1;
 
-  // Xử lý :
+    // Xử lý :
 
-  var total = (tongTien * (slcTip / 100)) / share;
-  var result = "";
-  result += "<p>Tip Amount</p>";
-  result += "<p>" + total + "</p>";
-  result += "<p>Mỗi người</p>";
+    var total = (tongTien * (slcTip / 100)) / share;
+    var result = "";
+    result += "<p>Tip Amount</p>";
+    result += "<p>" + total + "</p>";
+    result += "<p>Mỗi người</p>";
 
-  // Đầu ra
-  var footerTip = document.getElementById("footerTip");
-  footerTip.innerHTML = result;
+    // Đầu ra
+    var footerTip = document.getElementById("footerTip");
+    footerTip.innerHTML = result;
 }
 
 /* Làm thử bài tính tổng số tiền cho mỗi người
@@ -44,16 +44,16 @@ output
 */
 var btnMoney = document.getElementById("btnMoney");
 btnMoney.onclick = function () {
-  var nhapTien = document.getElementById("nhapTien").value;
-  var tienBo = document.getElementById("tienBo").value;
-  var sharePeople = document.getElementById("sharePeople").value;
-  console.log(nhapTien, tienBo, sharePeople);
-  var campuchia = 0;
+    var nhapTien = document.getElementById("nhapTien").value;
+    var tienBo = document.getElementById("tienBo").value;
+    var sharePeople = document.getElementById("sharePeople").value;
+    console.log(nhapTien, tienBo, sharePeople);
+    var campuchia = 0;
 
-  campuchia = (nhapTien / sharePeople) + (nhapTien * tienBo / 100) / sharePeople;
+    campuchia = (nhapTien / sharePeople) + (nhapTien * tienBo / 100) / sharePeople;
 
 
-  document.getElementById("campuchia").innerHTML = 'Mỗi người ' + campuchia + ' $';
+    document.getElementById("campuchia").innerHTML = 'Mỗi người ' + campuchia + ' $';
 }
 
 /*
@@ -73,12 +73,12 @@ Bài tập tính tiền lương nhân viên
 */
 var tinhLuong = document.getElementById("tinhLuong");
 tinhLuong.onclick = function () {
-  var ngayLam = document.getElementById("ngayLam").value;
-  var tienLuong = 0;
+    var ngayLam = document.getElementById("ngayLam").value;
+    var tienLuong = 0;
 
-  tienLuong = ngayLam * 100000;
+    tienLuong = ngayLam * 100000;
 
-  document.getElementById("tienLuong").innerHTML = 'Lương tháng của bạn là : ' + tienLuong + ' VND';
+    document.getElementById("tienLuong").innerHTML = 'Lương tháng của bạn là : ' + tienLuong + ' VND';
 }
 
 /*
@@ -98,7 +98,19 @@ Bài tập nhập 5 số thực và tính số trung bình
 - In ra trung bình của 5 số đã nhập
 */
 
+var tinhTB = document.getElementById("tinhTB");
+tinhTB.onclick = function () {
+  var Num_1 = document.getElementById("Num_1").value * 1 ;
+  var Num_2 = document.getElementById("Num_2").value * 1 ;
+  var Num_3 = document.getElementById("Num_3").value * 1 ;
+  var Num_4 = document.getElementById("Num_4").value * 1 ;
+  var Num_5 = document.getElementById("Num_5").value * 1 ;
+  var result_TB = 0;
 
+  result_TB = (Num_1 + Num_2 + Num_3 + Num_4 + Num_5) / 5 ;
+
+  document.getElementById("result_TB").innerHTML = "Giá trị trung bình : " + result_TB ;
+}
 
 /*
 Bài tập quy đổi ra tiền đô $ . 1$ = 23.500 VND
@@ -110,74 +122,12 @@ Bài tập quy đổi ra tiền đô $ . 1$ = 23.500 VND
 - In ra số tiền VND tương ứng
 */
 
-/*
-Tính diện tích, chu vi hình chữ nhật
-■ Input
-- Nhập chiều dài
-- Nhập chiều rộng
+var doiTien = document.getElementById("doiTien");
+doiTien.onclick = function () {
+    var tienDoi = document.getElementById("tienDoi").value * 1;
+    var tienVND = 0;
 
-■ Process
-- Tạo biến & hàm cho action
-  + btnTinh
-  + onclick
-- Tạo biến : (DOM đến các id tương ứng)
-  + chieuDai (quy định kiểu number or * 1)
-  + chieuRong
-  + chuVi
-  + dienTich
-- Xủ lý : 
-  + chuVi = (chieuDai + chieuRong) * 2 ;
-  + dienTich = chieuDai * chieuRong
-- In kết quả (DOM đến id kết quả)
-  + ...innerHTML = 
-  + click vào 1 button, ra kết quả của cả 2
+    tienVND = tienDoi * 23500;
 
-■　Output
-- In ra diện tích
-- In ra chu vi
-*/
-
-var btnTinh = document.getElementById("btnTinhHCN");
-btnTinhHCN.onclick = function () {
-  var chieuDai = document.getElementById("chieuDai").value * 1;
-  var chieuRong = document.getElementById("chieuRong").value * 1;
-  var chuVi = 0;
-  var dienTich = 0;
-
-  chuVi = (chieuDai + chieuRong) * 2;
-  dienTich = chieuDai * chieuRong;
-
-  document.getElementById("resultHCN").innerHTML = "Diện tích : " + dienTich + "; Chu vi : " + chuVi;
+    document.getElementById("tienVND").innerHTML = 'Số tiền VN tương ứng : ' + tienVND + ' VND';
 }
-
-/*
-Tính tổng 2 ký tự của số có 2 chữ số đã nhập.
-■ Input
-- Nhập chữ số có 2 chữ số
-
-■ Process
-- Tạo biến & hàm cho action
-  + btnTinh
-  + onclick
-- Tạo biến : (DOM đến các id tương ứng)
-  + nhapSo (quy định kiểu number or * 1)
-  + tong2so
-- Xủ lý : 
-  + tong2so = nhapSo/10 + nhapSo % 10 ;
-- In kết quả (DOM đến id kết quả)
-  + ...innerHTML = 
-
-■　Output
-- Tổng 2 ký tự của số có 2 chữ số đã nhập.
-*/
-
-var btnTinh = document.getElementById("btnTinh");
-btnTinh.onclick = function () {
-  var nhapSo = document.getElementById("nhapSo").value * 1 ;
-  var tong2so = 0;
-
-  tong2so = Math.floor(nhapSo/10) + nhapSo % 10 ;
-
-  document.getElementById("tong2so").innerHTML = "Tổng 2 ký tự là : " + tong2so ;
-}
-
