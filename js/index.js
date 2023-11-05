@@ -98,7 +98,19 @@ Bài tập nhập 5 số thực và tính số trung bình
 - In ra trung bình của 5 số đã nhập
 */
 
+var tinhTB = document.getElementById("tinhTB");
+tinhTB.onclick = function () {
+  var Num_1 = document.getElementById("Num_1").value * 1 ;
+  var Num_2 = document.getElementById("Num_2").value * 1 ;
+  var Num_3 = document.getElementById("Num_3").value * 1 ;
+  var Num_4 = document.getElementById("Num_4").value * 1 ;
+  var Num_5 = document.getElementById("Num_5").value * 1 ;
+  var result_TB = 0;
 
+  result_TB = (Num_1 + Num_2 + Num_3 + Num_4 + Num_5) / 5 ;
+
+  document.getElementById("result_TB").innerHTML = "Giá trị trung bình : " + result_TB ;
+}
 
 /*
 Bài tập quy đổi ra tiền đô $ . 1$ = 23.500 VND
@@ -109,3 +121,13 @@ Bài tập quy đổi ra tiền đô $ . 1$ = 23.500 VND
 ■　Output
 - In ra số tiền VND tương ứng
 */
+
+var doiTien = document.getElementById("doiTien");
+doiTien.onclick = function () {
+    var tienDoi = document.getElementById("tienDoi").value * 1;
+    var tienVND = 0;
+
+    tienVND = tienDoi * 23500;
+
+    document.getElementById("tienVND").innerHTML = 'Số tiền VN tương ứng là : ' + tienVND + ' VND';
+}
